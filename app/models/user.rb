@@ -12,4 +12,6 @@ class User < ApplicationRecord
   has_many :activities
   has_many :user_lessons
   has_many :lessons, through: :user_lessons
+
+  enum role: [:user, :admin]
 end
