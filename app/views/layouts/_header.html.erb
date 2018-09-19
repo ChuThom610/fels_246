@@ -5,21 +5,27 @@
       <div class="navbar-collapse collapse" id="navbar_global">
         <% if user_signed_in? %>
           <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-            <li class="nav-item mx-2">
-              <%= link_to t(".words"), root_path, class: "nav-link text-light" %>
-            </li>
             <% if current_user.admin? %>
+              <li class="nav-item mx-2">
+                <%= link_to t(".words"), admin_words_path, class: "nav-link text-light" %>
+              </li>
               <li class="nav-item mx-2">
                 <%= link_to t(".category"), admin_categories_path, class: "nav-link text-light" %>
               </li>
+              <li class="nav-item mx-2">
+                <%= link_to t(".lessons"), admin_lessons_path, class: "nav-link text-light" %>
+              </li>
             <% else %>
+              <li class="nav-item mx-2">
+                <%= link_to t(".words"), words_path, class: "nav-link text-light" %>
+              </li>
               <li class="nav-item mx-2">
                 <%= link_to t(".category"), categories_path, class: "nav-link text-light" %>
               </li>
+              <li class="nav-item mx-2">
+                <%= link_to t(".lessons"), "#", class: "nav-link text-light" %>
+              </li>
             <% end %>
-            <li class="nav-item mx-2">
-              <%= link_to t(".lessons"), root_path, class: "nav-link text-light" %>
-            </li>
           </ul>
           <ul class="navbar-nav align-items-lg-center ml-lg-auto">
             <li class="dropdown">
@@ -47,19 +53,23 @@
             <li class="nav-item d-none d-lg-block ml-lg-4 btn-group">
               <%= link_to "#", class: "btn btn-success btn-icon dropdown-toggle",
                 :"data-toggle" => "dropdown" do %>
-                <i class="fa fa-user">&nbsp;<%= t ".account" %></i>
+                <i class="fa fa-user"></i>
+                <%= t ".account" %>
               <% end %>
               <div class="dropdown-menu">
-                <%= link_to "#", class: "dropdown-item" do %>
-                  <i class="fa fa-user-circle">&nbsp;<%= t ".profile" %></i>
+                <%= link_to current_user, class: "dropdown-item" do %>
+                  <i class="fa fa-user-circle"></i>
+                  <%= t ".profile" %>
                 <% end %>
                 <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
-                  <i class="fa fa-cog">&nbsp;<%= t ".settings" %></i>
+                  <i class="fa fa-cog"></i>
+                  <%= t ".settings" %>
                 <% end %>
                 <div class="dropdown-divider"></div>
                 <%= link_to destroy_user_session_path, class: "dropdown-item",
                   method: :delete do %>
-                  <i class="fa fa-sign-out">&nbsp;<%= t ".logout" %></i>
+                  <i class="fa fa-sign-out"></i>
+                  <%= t ".logout" %>
                 <% end %>
               </div>
             </li>

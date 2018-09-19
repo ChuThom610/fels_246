@@ -19,4 +19,7 @@ Rails.application.routes.draw do
       patch "checked"
     end
   end
+
+  resources :users
+  resources :words, only: :index
 end
