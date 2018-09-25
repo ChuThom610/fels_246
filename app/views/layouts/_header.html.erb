@@ -1,7 +1,7 @@
 <header class="header-global">
   <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
     <div class="container">
-      <button class="btn btn-1 btn-outline-success" type="button"><%= t ".brand" %></button>
+      <%= link_to t(".brand"), root_path, class: "btn btn-1 btn-outline-success" %>
       <div class="navbar-collapse collapse" id="navbar_global">
         <% if user_signed_in? %>
           <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
@@ -10,17 +10,20 @@
                 <%= link_to t(".words"), admin_words_path, class: "nav-link text-light" %>
               </li>
               <li class="nav-item mx-2">
-                <%= link_to t(".category"), admin_categories_path, class: "nav-link text-light" %>
+                <%= link_to t(".categories"), admin_categories_path, class: "nav-link text-light" %>
               </li>
               <li class="nav-item mx-2">
                 <%= link_to t(".lessons"), admin_lessons_path, class: "nav-link text-light" %>
+              </li>
+              <li class="nav-item mx-2">
+                <%= link_to t(".users"), admin_users_path, class: "nav-link text-light" %>
               </li>
             <% else %>
               <li class="nav-item mx-2">
                 <%= link_to t(".words"), words_path, class: "nav-link text-light" %>
               </li>
               <li class="nav-item mx-2">
-                <%= link_to t(".category"), categories_path, class: "nav-link text-light" %>
+                <%= link_to t(".categories"), categories_path, class: "nav-link text-light" %>
               </li>
               <li class="nav-item mx-2">
                 <%= link_to t(".lessons"), "#", class: "nav-link text-light" %>
@@ -30,11 +33,10 @@
           <ul class="navbar-nav align-items-lg-center ml-lg-auto">
             <li class="dropdown">
               <%= link_to "#", id: "noti-count", data: {toggle: "dropdown"} do %>
-                <i class="fa fa-bell">
-                  <sup class="badge badge-pill badge-danger" >
-                    <%= current_user.notifications.num_uncheck %>
-                  </sup>
-                </i>
+                <i class="fa fa-bell"></i>
+                <sup class="badge badge-pill badge-danger" >
+                  <%= current_user.notifications.num_uncheck %>
+                </sup>
               <% end %>
               <ul class="dropdown-menu dropdown-notification scrollable-menu">
                 <% current_user.notifications.uncheck.each do |noti| %>

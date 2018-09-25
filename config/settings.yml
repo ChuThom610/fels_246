@@ -4,6 +4,11 @@ model:
       maximum: 50
     description:
       maximum: 150
+  words:
+    name:
+      maximum: 50
+    meaning:
+      maximum: 200
 
 image_format: "image/jpeg,image/gif,image/png"
 image_size: [250, 250]

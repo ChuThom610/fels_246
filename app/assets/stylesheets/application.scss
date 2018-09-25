@@ -13,7 +13,7 @@ $gray: #808080;
 }
 
 .description {
-  height: 80px;
+  height: 90px;
 }
 
 .noti-item {
@@ -22,4 +22,9 @@ $gray: #808080;
   #noti-day {
     color: $gray;
   }
+}
+
+.image {
+  height: 100%;
+  width: 100%;
 }

@@ -4,7 +4,7 @@ en:
     header:
       brand: "Framgia E-learning"
       words: "Words"
-      category: "Category"
+      categories: "Categories"
       lessons: "Lessons"
       signin: "Sign in"
       signup: "Sign up"
@@ -12,6 +12,7 @@ en:
       profile: "Profile"
       settings: "Settings"
       logout: "Log out"
+      users: "Users"
     footer:
       contact: "Contact"
       about: "About us"

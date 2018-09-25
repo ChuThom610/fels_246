@@ -3,7 +3,8 @@
     <div class="card-body py-4">
       <h5 class="text-primary text-uppercase"><%= category.name %></h5>
       <p class="description mt-3"><%= category.description %></p>
-      <%= link_to t(".learn_more"), "#", class: "btn btn-sm btn-primary mt-4"%>
+      <%= link_to t(".learn_more"), category_path(category.id),
+        class: "btn btn-sm btn-primary mt-4 pull-right"%>
     </div>
   </div>
 </div>

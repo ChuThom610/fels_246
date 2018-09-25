@@ -9,6 +9,11 @@ class Word < ApplicationRecord
   has_many :lesson_words
   has_many :lessons, through: :lesson_words
 
+  validates :name, presence: true,
+    length: {maximum: Settings.model.words.name.maximum}
+  validates :meaning, presence: true,
+    length: {maximum: Settings.model.words.meaning.maximum}
+
   scope :load_words, (lambda do
     select(:id, :name, :meaning).order :name
   end)
