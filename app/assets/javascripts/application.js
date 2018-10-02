@@ -18,4 +18,4 @@
 //= require cocoon
 //= require_tree ../../../vendor/assets/js
 //= require_tree .
-
+//= require datatables

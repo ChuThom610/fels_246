@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   private
 
   def load_categories
-    @categories = Category.all
+    @categories = Category.all.page(params[:page]).per Settings.rows
   end
 
   def load_words

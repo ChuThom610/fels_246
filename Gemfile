@@ -3,6 +3,7 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.5.1"
 
+gem "ajax-datatables-rails"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap", "~> 4.1.3"
 gem "bootstrap4-kaminari-views"
@@ -15,6 +16,7 @@ gem "faker", "1.7.3"
 gem "figaro"
 gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
+gem "jquery-datatables"
 gem "jquery-rails"
 gem "kaminari"
 gem "mini_magick"

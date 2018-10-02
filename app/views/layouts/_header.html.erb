@@ -7,10 +7,10 @@
           <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
             <% if current_user.admin? %>
               <li class="nav-item mx-2">
-                <%= link_to t(".words"), admin_words_path, class: "nav-link text-light" %>
+                <%= link_to t(".categories"), admin_categories_path, class: "nav-link text-light" %>
               </li>
               <li class="nav-item mx-2">
-                <%= link_to t(".categories"), admin_categories_path, class: "nav-link text-light" %>
+                <%= link_to t(".words"), admin_words_path, class: "nav-link text-light" %>
               </li>
               <li class="nav-item mx-2">
                 <%= link_to t(".lessons"), admin_lessons_path, class: "nav-link text-light" %>
@@ -20,13 +20,13 @@
               </li>
             <% else %>
               <li class="nav-item mx-2">
-                <%= link_to t(".words"), words_path, class: "nav-link text-light" %>
-              </li>
-              <li class="nav-item mx-2">
                 <%= link_to t(".categories"), categories_path, class: "nav-link text-light" %>
               </li>
               <li class="nav-item mx-2">
-                <%= link_to t(".lessons"), "#", class: "nav-link text-light" %>
+                <%= link_to t(".words"), words_path, class: "nav-link text-light" %>
+              </li>
+              <li class="nav-item mx-2">
+                <%= link_to t(".lessons"), lessons_path, class: "nav-link text-light" %>
               </li>
             <% end %>
           </ul>

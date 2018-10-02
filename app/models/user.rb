@@ -30,5 +30,4 @@ class User < ApplicationRecord
   enum role: [:user, :admin]
 
   scope :load_users, ->(id){where.not(id: id)}
-
 end

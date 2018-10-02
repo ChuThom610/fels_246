@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "argon";
 @import "font-awesome";
+@import "datatables";
 
 $lightgray: #D3D3D3;
 $gray: #808080;
@@ -28,3 +29,5 @@ $gray: #808080;
   height: 100%;
   width: 100%;
 }
+
+@import "datatables";
