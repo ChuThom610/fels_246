@@ -3,6 +3,7 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.5.1"
 
+gem "ajax-datatables-rails"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap", "~> 4.1.3"
 gem "bootstrap4-kaminari-views"
@@ -15,6 +16,7 @@ gem "faker", "1.7.3"
 gem "figaro"
 gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
+gem "jquery-datatables"
 gem "jquery-rails"
 gem "kaminari"
 gem "mini_magick"
@@ -30,6 +32,9 @@ gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails"
+  gem "rails-controller-testing"
+  gem "rspec-rails", "~> 3.8"
   gem "rubocop", "~> 0.54.0", require: false
 end
 
@@ -49,7 +54,10 @@ end
 group :test do
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
+  gem "rspec-activemodel-mocks"
   gem "selenium-webdriver"
+  gem "shoulda-matchers"
+  gem "simplecov", require: false
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
